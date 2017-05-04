@@ -15,11 +15,10 @@ namespace Emailer
             //objEmail = new SMTPProvider();
             objEmail = new AmazonProvider();
 
-            EmailSender_ConstInjection objSender = new EmailSender_ConstInjection(objEmail);
+            EmailSender objSender = new EmailSender(objEmail);
             objSender.Notification(emailInfo);
 
         }
-
 
 
 
@@ -34,22 +33,7 @@ namespace Emailer
         }
 
     }
-        //This is the most common dependency injection.
-        //When a class requires an instance of a dependency to work, we can supply that dependency through the class’s constructor. 
-        public class EmailSender_ConstInjection
-        {
-            private IEmailService _iEmailService;
-            //the implementation of the constructor is very simple 
-            public EmailSender_ConstInjection(IEmailService _mailService)
-            {
-                this._iEmailService = _mailService;
-            }
-            public void Notification(EmailInfo ObjEmailInfo)
-            {
-                _iEmailService.sendMail(ObjEmailInfo);
-            }
-        }
-
+       
 
 
     
