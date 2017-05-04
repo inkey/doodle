@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmailInfo.cs" />
+    <Compile Include="EmailSender.cs" />
     <Compile Include="IEmailService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
